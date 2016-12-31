@@ -123,7 +123,8 @@ public class HomeController {
 				
 				// Searching the RNA
 				System.out.println("Searching Pattern in the database. ");
-				SuffixIntArray searchOnly = new SuffixIntArray();
+				//SuffixIntArray searchOnly = new SuffixIntArray();
+				BinarySearch searchOnly = new BinarySearch();
 				for (int k = 0; k <= var.getNoOfSearchPatterns(); k++) {
 					
 					 startTime = System.nanoTime();

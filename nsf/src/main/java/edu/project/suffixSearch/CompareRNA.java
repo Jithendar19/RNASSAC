@@ -186,7 +186,8 @@ public class CompareRNA {
                     //System.out.println();
                     SearchSuffix[p][q] = -99999;
                 }
-                SuffixIntArray cmpsearch = new SuffixIntArray();
+              //  SuffixIntArray cmpsearch = new SuffixIntArray();
+                BinarySearch cmpsearch = new BinarySearch();
                 
                 //Comparing each suffix to find the optimal length
                 System.out.println("Comparing each suffix to find the optimal length");
@@ -290,7 +291,8 @@ public class CompareRNA {
                 OptimalSuffix[p][q] = -99999;
             } 
             n = p;
-            SuffixIntArray optimalsearch = new SuffixIntArray();
+          //  SuffixIntArray optimalsearch = new SuffixIntArray();
+            BinarySearch optimalsearch = new BinarySearch();
             for(int x = 0; x <= n; x++)
             {
                 String SearchString = "";
@@ -349,7 +351,8 @@ public class CompareRNA {
                 
             
             boolean Present = false;
-            SuffixIntArray cmpstring = new SuffixIntArray();
+           // SuffixIntArray cmpstring = new SuffixIntArray();
+            BinarySearch cmpstring = new BinarySearch();
             String OutputString ="";
             if(CompareWithNucleotide == 1)
                 OutputString = cmpstring.search(OptimalPattern, OptimalLength, 0, SuffixNucleotide, InputRNANucleotide, SuffixArrayIndexIteratorNucleotide);

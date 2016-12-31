@@ -20,7 +20,7 @@ public class SuffixIntArray {
         instead of disturbing the actual inut array */
         
         /* Function that creates the Suffix Array, sorts the array and does binary search */
-        public void createSuffixArray(int[][] inputRNA,int FileNumber, int[][] Suffix, int Nucleotide)
+        public int[][] createSuffixArray(int[][] inputRNA,int FileNumber, int[][] Suffix, int Nucleotide)
         {           
             //Display  RNA array and calculating the length of each array
          //  System.out.println("Input RNA Array : ");
@@ -82,11 +82,17 @@ public class SuffixIntArray {
                 System.out.println();
             } */
         //Writes Suffix Array into Suffix file
-        CreateSuffixFile suffixFile = new CreateSuffixFile();
+       /* CreateSuffixFile suffixFile = new CreateSuffixFile();
         if (Nucleotide == 1)
             suffixFile.CreateOutputFile(Suffix,SuffixArrayIndexIterator,"SuffixFileNucleotide.txt");
         else
-            suffixFile.CreateOutputFile(Suffix,SuffixArrayIndexIterator,"SuffixFileStructure.txt"); 
+            suffixFile.CreateOutputFile(Suffix,SuffixArrayIndexIterator,"SuffixFileStructure.txt"); */
+            return Suffix;
+        }
+        
+        public int getSuffixArrayIndexIterator()
+        {
+            return SuffixArrayIndexIterator;
         }
         
         private void doMergeSort(int lowerIndex, int higherIndex, int[][] inputRNA, int[][] Suffix) {
@@ -170,7 +176,7 @@ public class SuffixIntArray {
                 } 
                
 //Binary Search to find the no. of matches 
-public String search(int[][] Search, int length, int n,int[][] Suffix, int[][] inputRNA,int SuffixArrayIndexIterator)
+/*public String search(int[][] Search, int length, int n,int[][] Suffix, int[][] inputRNA,int SuffixArrayIndexIterator)
 {
 	int Greater , NoOfMatches = 0; outputString = "#";
 	int l = 0, r = SuffixArrayIndexIterator;
@@ -191,7 +197,7 @@ public String search(int[][] Search, int length, int n,int[][] Suffix, int[][] i
             System.out.println("Smallest Match  :" +small);
             System.out.println("Number of matches : " +NoOfMatches); */
            // System.out.println("outputString1 : " +outputString);
-            return outputString;
+         /*   return outputString;
           } 
           if (Greater == 1)
             l = keymid + 1;
@@ -291,5 +297,5 @@ public String search(int[][] Search, int length, int n,int[][] Suffix, int[][] i
         }
         output = output + length;
         return output;
-    }
+    } */
 }

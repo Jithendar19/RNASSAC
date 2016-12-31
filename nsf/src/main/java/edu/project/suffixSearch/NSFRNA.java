@@ -39,16 +39,17 @@ public class NSFRNA {
         //Creating Suffix Array Nucleotide
         System.out.println("Creating Suffix Array Nucleotide ....  ");
         SuffixIntArray createSuffixNucleotide = new SuffixIntArray();
-        createSuffixNucleotide.createSuffixArray(var.getInputRNANucleotide(), var.getFileNumber(), var.getSuffixNucleotide(), 1); 
+        var.setSuffixNucleotide(createSuffixNucleotide.createSuffixArray(var.getInputRNANucleotide(), var.getFileNumber(), var.getSuffixNucleotide(), 1)); 
+        var.setSuffixArrayIndexIteratorNucleotide(createSuffixNucleotide.getSuffixArrayIndexIterator());
         
         //Creating Suffix Array Structure
         System.out.println("Creating Suffix Array Nucleotide ....  ");
         SuffixIntArray createSuffixStructure = new SuffixIntArray();
-        createSuffixStructure.createSuffixArray(var.getInputRNAStructure(), var.getFileNumber(), var.getSuffixStructure(), 0); 
-              
+        var.setSuffixStructure(createSuffixStructure.createSuffixArray(var.getInputRNAStructure(), var.getFileNumber(), var.getSuffixStructure(), 0)); 
+        var.setSuffixArrayIndexIteratorStructure(createSuffixStructure.getSuffixArrayIndexIterator());
       
         //Reading Suffix Array Nucleotide
-        System.out.println("Reading Suffix Array from file....  "); 
+     /*   System.out.println("Reading Suffix Array from file....  "); 
         CreateSuffixFile readSuffixNucleotide = new CreateSuffixFile();
         readSuffixNucleotide.OpenFile("/opt/NSF_Data_Files/SuffixFileNucleotide.txt");
         var.setSuffixNucleotide(readSuffixNucleotide.ReadFile(var.getSuffixNucleotide()));
@@ -61,7 +62,7 @@ public class NSFRNA {
         readSuffixStructure.OpenFile("/opt/NSF_Data_Files/SuffixFileStructure.txt");
         var.setSuffixStructure(readSuffixStructure.ReadFile(var.getSuffixStructure()));
         var.setSuffixArrayIndexIteratorStructure(readSuffixStructure.SuffixArrayIndexIterator());
-        readSuffixStructure.CloseFile(); 
+        readSuffixStructure.CloseFile(); */
         
 //        
 //        //Converting SearchRNA to new format
